@@ -6,21 +6,25 @@
     <title>EcoFire: A Revolução na Segurança Contra Incêndios</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chart.js Datalabels Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Warm Neutrals & Green Accent -->
-    <!-- Application Structure Plan: A single-page, vertical scrolling narrative designed to act as a sales funnel. It starts with a Hero section stating the value proposition, followed by identifying the 'Problem' with conventional extinguishers. Then it presents 'The Solution' (EcoFire) with its core benefits. The centerpiece is an 'Interactive Comparison' dashboard that allows users to compare EcoFire against others on various criteria, making data digestible. This is followed by sections on 'How it Works', key 'Applications' (especially modern risks like Lithium batteries), and the 'Total Cost of Ownership' to address price concerns. A new 'Fire Scenario Simulator' section has been added to leverage LLM capabilities for personalized demonstrations. A new 'Infographics and Impact' section has been added to provide data on global and Brazilian fires and how EcoFire can mitigate them. This structure was chosen to guide the user from a general problem to a specific, superior solution, using interaction to prove its value rather than just stating it, which is more persuasive for potential customers. -->
+    <!-- Application Structure Plan: A single-page, vertical scrolling narrative designed to act as a sales funnel. It starts with a Hero section stating the value proposition, followed by identifying the 'Problem' with conventional extinguishers. Then it presents 'The Solution' (EcoFire) with its core benefits. The centerpiece is an 'Interactive Comparison' dashboard that allows users to compare EcoFire against others on various criteria, making data digestible. This is followed by sections on 'How it Works', key 'Applications' (especially modern risks like Lithium batteries), and the 'Total Cost of Ownership' to address price concerns. The 'Fire Scenario Simulator' and 'Industry Applications' sections have been merged into a single 'Cenários e Aplicações do EcoFire' section, allowing users to select a scenario/industry from a left-hand list and view a pre-written description with a corresponding image on the right-hand panel. A new 'Infographics and Impact' section has been added to provide data on global and Brazilian fires and how EcoFire can mitigate them. The navigation has been refactored to include a "Onde Usar" dropdown menu grouping "Aplicações Críticas", "Cenários e Aplicações do EcoFire", and "Infográficos e Impacto". This structure was chosen to guide the user from a general problem to a specific, superior solution, using interaction to prove its value rather than just stating it, which is more persuasive for potential customers. -->
     <!-- Visualization & Content Choices: 
         - Report Info: Comparative data from Table 3.3. Goal: Compare. Viz/Method: Interactive Bar Chart (Chart.js) and dynamic text blocks. Interaction: User clicks buttons (e.g., 'Resíduos', 'Segurança') to update the chart and text, focusing on one comparison aspect at a time. Justification: This makes dense data from a static table engaging and easy to understand, allowing users to explore based on their priorities. Library: Chart.js.
         - Report Info: Core benefits of EcoFire. Goal: Inform. Viz/Method: Icon-based grid with text (HTML/CSS). Interaction: Static display for quick scanning. Justification: Provides a high-level, visually appealing summary of key advantages.
         - Report Info: Limitations of conventional extinguishers. Goal: Inform/Contrast. Viz/Method: Card layout (HTML/CSS). Interaction: Static. Justification: Clearly sets up the problem that EcoFire solves.
         - Report Info: Composition and mechanism. Goal: Organize/Explain. Viz/Method: Styled HTML/CSS flow diagram. Interaction: Static. Justification: Visually simplifies a technical process for better user comprehension.
-        - New Feature: Fire Scenario Simulator. Goal: Personalize/Demonstrate. Viz/Method: Text input, button, and dynamic text output. Interaction: User inputs a scenario, clicks a button, and receives an LLM-generated analysis of EcoFire's suitability for that scenario, comparing it to conventional methods. Justification: Provides a direct, interactive demonstration of EcoFire's superiority in specific contexts, enhancing user engagement and conviction. Library: Gemini API (gemini-2.0-flash).
+        - Merged Feature: Cenários e Aplicações do EcoFire. Goal: Personalize/Demonstrate & Targeted Relevance. Viz/Method: Left-hand interactive list of scenarios/industries, and a right-hand dynamic display panel with title, image, and descriptive text. Interaction: User clicks a list item, and the corresponding pre-written analysis of EcoFire's suitability for that scenario/industry is displayed along with a relevant image. The product image carousel has been removed from this section. Justification: Consolidates similar interactive content into a unified, two-column layout, improving navigability, visual organization, and providing a visually rich demonstration of EcoFire's versatility and applicability across various contexts. Images are sized to fit well within the display panel.
         - New Feature: Theme Toggle. Goal: User Preference. Viz/Method: Button to toggle CSS classes. Interaction: User clicks button to switch between light and dark modes, preference saved in localStorage. Justification: Improves user experience and accessibility.
         - New Feature: Hero Background Image. Goal: Visual Appeal. Viz/Method: CSS background-image on a div. Interaction: Static. Justification: Enhances the aesthetic appeal of the introductory section.
         - Updated Feature: Contact Info Modal with QR Code. Goal: Lead Capture/Contact. Viz/Method: Modal dialog with contact details and QR code (HTML/CSS/JS). Interaction: User clicks "Solicitar Demonstração" button, modal appears displaying contact information and a QR code for email. Justification: Provides a clear, direct, and modern way for potential customers to initiate contact, replacing the previous mailto link and form.
-        - New Feature: Infographics and Impact. Goal: Inform/Contextualize. Viz/Method: Multiple Chart.js charts (Line, Doughnut, Bar) and HTML/CSS cards. Interaction: Static. Justification: Provides data-driven insights into fire problems globally and in Brazil, reinforcing the need for effective solutions like EcoFire. Charts are styled to adapt to theme changes.
+        - New Feature: Infographics and Impact. Goal: Inform/Contextualize. Viz/Method: Multiple Chart.js charts (Line, Doughnut, Bar with datalabels) and HTML/CSS cards with emojis in titles. Interaction: Static. Justification: Provides data-driven insights into fire problems globally and in Brazil, reinforcing the need for effective solutions like EcoFire. Charts are styled to adapt to theme changes.
+        - New Section: Nossos Produtos EcoFire. Goal: Product Showcase. Viz/Method: Gallery of clickable product images with titles and descriptions. Each product item is now a direct link to the product's official website page. Interaction: User clicks on a product image to view its details in a dedicated panel. Justification: Provides a dedicated and interactive space to highlight individual products, their features, and visual appeal, enhancing product discoverability and understanding, with direct links for more information.
+        - Navigation Refactor: "Onde Usar" dropdown. Goal: Improved UX/Navigation. Viz/Method: HTML <select> element. Interaction: User selects an option, scrolls to relevant section. Justification: Consolidates multiple navigation links into a single, organized dropdown, reducing clutter and improving navigability for a single-page application.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
@@ -169,6 +173,129 @@
         html.dark .modal-content a {
             color: #86efac;
         }
+
+        /* Two-column layout for scenarios/applications */
+        .scenario-app-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .scenario-app-container {
+                flex-direction: row;
+            }
+        }
+
+        .scenario-list-panel {
+            flex-shrink: 0;
+            width: 100%;
+            max-height: 600px; /* Limit height for scrollability */
+            overflow-y: auto; /* Enable scrolling */
+            border-radius: 0.75rem;
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        html.dark .scenario-list-panel {
+            background-color: #2d3748;
+        }
+
+        .scenario-list-item {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.25rem;
+            border-radius: 0.5rem;
+            text-align: left;
+            color: #3C3C3B;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+            font-weight: 600;
+        }
+        .scenario-list-item:hover {
+            background-color: #f1f5f9;
+        }
+        .scenario-list-item.active {
+            background-color: #166534;
+            color: #ffffff;
+        }
+        html.dark .scenario-list-item {
+            color: #e2e8f0;
+        }
+        html.dark .scenario-list-item:hover {
+            background-color: #4a5568;
+        }
+        html.dark .scenario-list-item.active {
+            background-color: #15803d;
+            color: #ffffff;
+        }
+
+        .scenario-details-panel, .product-details-panel { /* Added product-details-panel here */
+            flex-grow: 1;
+            width: 100%;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            min-height: 400px; /* Ensure consistent height for carousel and content */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        html.dark .scenario-details-panel, html.dark .product-details-panel { /* Added product-details-panel here */
+            background-color: #2d3748;
+        }
+
+        .scenario-details-image, .product-details-image { /* Added product-details-image here */
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            max-height: 250px; /* Limit height */
+            object-fit: contain; /* Ensure image fits without cropping */
+            margin: 0 auto 1rem auto; /* Center image and add bottom margin */
+            display: block; /* Ensure margin auto works */
+        }
+
+        /* Product gallery styles */
+        .product-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 160px; /* Fixed width for consistency */
+            height: 180px; /* Fixed height for consistency */
+            padding: 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            background-color: #fff; /* Ensure product items have a background */
+        }
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .product-item.active {
+            border: 2px solid #166534; /* Highlight active product */
+        }
+        html.dark .product-item {
+            background-color: #2d3748;
+            color: #e2e8f0;
+        }
+        .product-item img {
+            max-width: 100px;
+            max-height: 100px;
+            object-fit: contain;
+            margin-bottom: 0.5rem;
+        }
+        .product-item p {
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 600; /* font-semibold */
+            text-align: center;
+        }
     </style>
 </head>
 <body class="bg-stone-50 text-stone-800">
@@ -181,9 +308,18 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#vantagens" class="text-stone-600 nav-link">Vantagens</a>
                     <a href="#comparativo" class="text-stone-600 nav-link">Comparativo</a>
-                    <a href="#aplicacoes" class="text-stone-600 nav-link">Aplicações</a>
-                    <a href="#simulador" class="text-stone-600 nav-link">Simulador ✨</a>
-                    <a href="#infograficos" class="text-stone-600 nav-link">Infográficos 📈</a>
+                    
+                    <div class="relative inline-block text-left">
+                        <select id="ondeUsarSelect" class="block appearance-none w-full bg-white border border-stone-300 text-stone-600 py-2 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-green-500 dark:bg-stone-700 dark:text-stone-300 dark:border-stone-600">
+                            <option value="" disabled selected>Onde Usar ▼</option>
+                            <option value="cenarios-e-aplicacoes">Cenários e Aplicações do EcoFire</option>
+                            <option value="infograficos">Infográficos e Impacto</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-stone-700 dark:text-stone-300">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        </div>
+                    </div>
+
                     <a href="#custo" class="text-stone-600 nav-link">Custo-Benefício</a>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -226,11 +362,11 @@
                         <p class="text-stone-600">Composto por ingredientes naturais, é atóxico, biodegradável e inofensivo para pessoas, animais e plantas. Segurança total para todos.</p>
                     </div>
                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                         <div class="text-green-700 mb-4">
+                        <div class="text-green-700 mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                         </div>
                         <h4 class="text-xl font-bold mb-2">Eficácia e Velocidade</h4>
-                        <p class="text-stone-600">Atua de 6 a 10 vezes mais rápido que a água, extinguindo o fogo completamente, resfriando a área e impedindo a reignição.</p>
+                        <p class="text-stone-600">Atua de 6 a 10 vezes mais rápido que a água, extinguindo o fogo completamente, resfriando a área e impedindo a reignition.</p>
                     </div>
                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
                         <div class="text-green-700 mb-4">
@@ -239,13 +375,33 @@
                         <h4 class="text-xl font-bold mb-2">Zero Resíduos e Danos</h4>
                         <p class="text-stone-600">Não deixa resíduos, não é corrosivo e é dielétrico. Protege equipamentos eletrónicos e sensíveis, eliminando custos de limpeza e reparação.</p>
                     </div>
-                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
                         <div class="text-green-700 mb-4">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                         </div>
                         <h4 class="text-xl font-bold mb-2">Versatilidade Total</h4>
-                        <p class="text-stone-600">Eficaz em todas as classes comuns de incêndio (A, B, C, D e K) é crucialmente, o único que controla incêndios em baterias de lítio.</p>
+                        <p class="text-stone-600">Eficaz em todas as classes comuns de incêndio (A, B, C, K) e, crucialmente, o único que controla incêndios em baterias de lítio.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nossos-produtos" class="py-16 md:py-24 bg-stone-100">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-3xl md:text-4xl font-bold mb-8">Nossos Produtos EcoFire</h3>
+                <p class="text-lg text-stone-600 max-w-3xl mx-auto mb-8">
+                    Explore a nossa linha completa de extintores EcoFire, projetados para cada necessidade. Clique para ver em detalhe.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center">
+                    <!-- Product items will be dynamically generated here -->
+                </div>
+                <div id="selectedProductDetails" class="mt-8 p-6 bg-white rounded-lg border border-stone-200 hidden">
+                    <h4 id="selectedProductTitle" class="text-xl font-bold mb-3 text-green-800"></h4>
+                    <img id="selectedProductImage" src="" alt="Imagem do Produto Selecionado" class="product-details-image rounded-lg mb-4 hidden">
+                    <p id="selectedProductDescription" class="text-stone-700 leading-relaxed"></p>
+                    <button id="clearProductSelectionBtn" class="mt-4 bg-stone-300 text-stone-800 font-bold px-4 py-2 rounded-lg hover:bg-stone-400 transition-colors text-sm">
+                        Limpar Seleção
+                    </button>
                 </div>
             </div>
         </section>
@@ -281,69 +437,59 @@
             </div>
         </section>
         
-        <section id="aplicacoes" class="py-16 md:py-24">
-            <div class="container mx-auto px-6">
-                 <div class="text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-bold">Aplicações Críticas</h3>
-                    <p class="text-lg text-stone-600 max-w-3xl mx-auto mt-4">
-                        Da indústria de alta tecnologia à segurança do lar, o EcoFire é a solução ideal para os ambientes mais exigentes e os riscos mais modernos.
-                    </p>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
-                         <div class="text-green-700 mb-4 inline-block">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3M5.636 5.636l-1.414-1.414M19.778 19.778l-1.414-1.414M18.364 5.636l-1.414 1.414M4.222 19.778l1.414-1.414M12 12a2 2 0 100-4 2 2 0 000 4z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 12a2 2 0 100-4 2 2 0 000 4z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a6 6 0 100-12 6 6 0 000 12z" /></svg>
-                        </div>
-                        <h4 class="text-xl font-bold mb-2">Baterias de Lítio e Veículos Elétricos</h4>
-                        <p class="text-stone-600">É o único agente comprovadamente eficaz para extinguir e arrefecer incêndios de baterias de lítio, prevenindo a fuga térmica e a propagação do fogo. Essencial para a segurança da mobilidade elétrica.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
-                         <div class="text-green-700 mb-4 inline-block">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" /></svg>
-                        </div>
-                        <h4 class="text-xl font-bold mb-2">Data Centers e Salas de Servidores</h4>
-                        <p class="text-stone-600">Por não ser corrosivo, não deixar resíduos e ser dielétrico, protege ativos de TI de valor incalculável, garantindo a continuidade dos negócios sem danos secundários.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
-                        <div class="text-green-700 mb-4 inline-block">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-                        </div>
-                        <h4 class="text-xl font-bold mb-2">Hospitais, Escolas e Cozinhas</h4>
-                        <p class="text-stone-600">Sua natureza atóxica e segura o torna ideal para ambientes com alta circulação de pessoas. Eficaz em óleos e gorduras (Classe K), garante a segurança em cozinhas profissionais e residenciais.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="simulador" class="py-16 md:py-24 bg-white">
+        <section id="cenarios-e-aplicacoes" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-bold">Simulador de Cenários de Incêndio ✨</h3>
+                    <h3 class="text-3xl md:text-4xl font-bold">Cenários e Aplicações do EcoFire ✨</h3>
                     <p class="text-lg text-stone-600 max-w-3xl mx-auto mt-4">
-                        Descreva um cenário de incêndio e veja como o EcoFire se destaca como a solução mais eficaz e segura.
+                        Selecione um cenário ou setor industrial para ver como o EcoFire oferece proteção especializada e eficaz.
                     </p>
                 </div>
-                <div class="max-w-3xl mx-auto bg-stone-100 rounded-lg p-8 shadow-lg">
-                    <label for="scenarioInput" class="block text-lg font-semibold text-stone-700 mb-3">Descreva o cenário de incêndio:</label>
-                    <textarea id="scenarioInput" rows="5" class="w-full p-4 border border-stone-300 rounded-lg focus:ring-green-500 focus:border-green-500 mb-4 text-stone-800" placeholder="Ex: Incêndio em uma cozinha industrial com óleo fervente, Incêndio em um data center devido a curto-circuito, etc."></textarea>
-                    <div class="flex flex-col md:flex-row gap-4 mb-4">
-                        <button id="simulateBtn" class="bg-green-700 text-white font-bold px-6 py-3 rounded-lg hover:bg-green-800 transition-colors flex items-center justify-center flex-grow">
-                            <span id="buttonText">Simular Cenário ✨</span>
-                            <span id="loadingSpinner" class="loading-spinner hidden"></span>
-                        </button>
-                        <button id="clearScenarioBtn" class="bg-stone-300 text-stone-800 font-bold px-6 py-3 rounded-lg hover:bg-stone-400 transition-colors flex-grow">
-                            Limpar Cenário
-                        </button>
+                <div class="scenario-app-container">
+                    <div class="scenario-list-panel md:w-1/3">
+                        <h4 class="text-xl font-bold mb-4 text-green-800">Escolha uma Opção:</h4>
+                        <ul>
+                            <li><button class="scenario-list-item" data-key="cozinha">🍳 Cozinha Industrial</button></li>
+                            <li><button class="scenario-list-item" data-key="datacenter">🖥️ Data Center</button></li>
+                            <li><button class="scenario-list-item" data-key="bateria">🔋 Bateria de Lítio</button></li>
+                            <li><button class="scenario-list-item" data-key="escritorio">🏢 Escritório</button></li>
+                            <li><button class="scenario-list-item" data-key="floresta">🌳 Floresta/Vegetação</button></li>
+                            <li><button class="scenario-list-item" data-key="painelEletrico">⚡ Painel Elétrico Industrial</button></li>
+                            <li><button class="scenario-list-item" data-key="veiculo">🚗 Veículo</button></li>
+                            <li><button class="scenario-list-item" data-key="laboratorio">🔬 Laboratório</button></li>
+                            <li><button class="scenario-list-item" data-key="hospital">🏥 Hospital</button></li>
+                            <li><button class="scenario-list-item" data-key="agro">🫛Agro</button></li>
+                            <li><button class="scenario-list-item" data-key="papeleira">🧻Papeleira</button></li>
+                            <li><button class="scenario-list-item" data-key="siderurgica">🏭Siderúrgica</button></li>
+                            <li><button class="scenario-list-item" data-key="metalurgica">🏭Metalúrgica</button></li>
+                            <li><button class="scenario-list-item" data-key="mineracao">⛏️Mineração</button></li>
+                            <li><button class="scenario-list-item" data-key="fertilizantes">🌱Fertilizantes</button></li>
+                            <li><button class="scenario-list-item" data-key="usinasAlcool">🏭Usinas de Álcool</button></li>
+                            <li><button class="scenario-list-item" data-key="combustiveis">⛽Combustíveis</button></li>
+                            <li><button class="scenario-list-item" data-key="petroquimico">🛢️Petroquímico</button></li>
+                            <li><button class="scenario-list-item" data-key="textil">🧵🪡Têxtil</button></li>
+                            <li><button class="scenario-list-item" data-key="florestais">🌲🌳🌴Florestais</button></li>
+                            <li><button class="scenario-list-item" data-key="algodao">🐏Algodão</button></li>
+                            <li><button class="scenario-list-item" data-key="armazemGrao">🏭Armazém de Grão</button></li>
+                        </ul>
                     </div>
-                    <div id="simulationResult" class="mt-8 p-6 bg-white rounded-lg border border-stone-200 hidden">
-                        <h4 class="text-xl font-bold mb-3 text-green-800">Análise do Cenário:</h4>
-                        <p id="resultText" class="text-stone-700 leading-relaxed"></p>
-                        <button id="shareScenarioBtn" class="mt-4 bg-blue-500 text-white font-bold px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors text-sm">
-                            Copiar para Compartilhar Cenário
-                        </button>
-                    </div>
-                    <div id="errorMessage" class="mt-4 p-4 bg-red-100 text-red-700 border border-red-300 rounded-lg hidden">
-                        Ocorreu um erro ao simular o cenário. Por favor, tente novamente.
+                    <div id="scenarioApplicationResult" class="scenario-details-panel md:w-2/3">
+                        <div id="selectedContent" class="hidden flex flex-col items-center justify-center h-full w-full">
+                            <h4 id="scenarioApplicationTitle" class="text-xl font-bold mb-3 text-green-800"></h4>
+                            <img id="scenarioApplicationImage" src="" alt="Imagem do Cenário/Indústria" class="scenario-details-image rounded-lg mb-4 hidden">
+                            <p id="scenarioApplicationDescription" class="text-stone-700 leading-relaxed"></p>
+                            <div class="flex flex-col md:flex-row gap-4 mt-6">
+                                <button id="clearScenarioApplicationBtn" class="bg-stone-300 text-stone-800 font-bold px-6 py-3 rounded-lg hover:bg-stone-400 transition-colors flex-grow">
+                                    Limpar Seleção
+                                </button>
+                                <button id="shareScenarioApplicationBtn" class="bg-blue-500 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors flex-grow">
+                                    Copiar para Compartilhar
+                                </button>
+                            </div>
+                        </div>
+                        <div id="placeholderContent" class="flex flex-col items-center justify-center h-full w-full">
+                            <p class="text-stone-600 text-center">Selecione um cenário ou indústria para ver os detalhes.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -359,7 +505,7 @@
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <h4 class="text-xl font-bold mb-2 text-green-800 text-center">Área Global Queimada (Milhões de Hectares)</h4>
+                        <h4 class="text-xl font-bold mb-2 text-green-800 text-center">🔥 Área Global Queimada (Milhões de Hectares)</h4>
                         <div class="chart-container h-56">
                             <canvas id="globalFiresChart"></canvas>
                         </div>
@@ -368,7 +514,7 @@
                         </p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <h4 class="text-xl font-bold mb-2 text-green-800 text-center">Focos de Queimada no Brasil por Bioma (2024)</h4>
+                        <h4 class="text-xl font-bold mb-2 text-green-800 text-center">🇧🇷 Focos de Queimada no Brasil por Bioma (2024)</h4>
                         <div class="chart-container h-56">
                             <canvas id="brazilBiomesChart"></canvas>
                         </div>
@@ -377,7 +523,7 @@
                         </p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <h4 class="text-xl font-bold mb-2 text-green-800 text-center">Principais Causas de Incêndios (Global)</h4>
+                        <h4 class="text-xl font-bold mb-2 text-green-800 text-center">🧑‍🚒 Principais Causas de Incêndios (Global)</h4>
                         <div class="chart-container h-56">
                             <canvas id="fireCausesChart"></canvas>
                         </div>
@@ -412,12 +558,12 @@
                     <div>
                         <h4 class="text-green-800 text-4xl font-bold mb-2">ZERO</h4>
                         <p class="font-semibold">Danos a Equipamentos</p>
-                         <p class="text-sm text-stone-600">Protege eletrónicos e máquinas da corrosão.</p>
+                        <p class="text-sm text-stone-600">Protege eletrónicos e máquinas da corrosão.</p>
                     </div>
                     <div>
                         <h4 class="text-green-800 text-4xl font-bold mb-2">ZERO</h4>
                         <p class="font-semibold">Tempo de Inatividade</p>
-                         <p class="text-sm text-stone-600">Retome as operações rapidamente após um incidente.</p>
+                        <p class="text-sm text-stone-600">Retome as operações rapidamente após um incidente.</p>
                     </div>
                 </div>
             </div>
@@ -430,7 +576,7 @@
         <div class="container mx-auto px-6 py-12 text-center relative z-10">
             <h3 class="text-3xl font-bold mb-4">Pronto para Elevar a sua Segurança?</h3>
             <p class="text-stone-300 max-w-xl mx-auto mb-8">
-                Entre em contato com nossa equipe para uma demonstração gratuita e descubra como o EcoFire pode proteger o que é mais importante para você.
+                Entre em contato com nossa equipe e agende uma demonstração e descubra como o EcoFire pode proteger o que é mais importante para você.
             </p>
             <button id="openContactModalBtn" class="bg-green-600 text-white font-bold px-8 py-4 rounded-lg hover:bg-green-700 transition-colors text-lg flex items-center justify-center mx-auto">
                 Solicitar Demonstração Agora <span class="ml-2">📞</span>
@@ -478,7 +624,7 @@
                     label: "Qualidade da Limpeza (10 = Sem Resíduo)"
                 },
                 safety: {
-                    title: "Análise de Segurança Humereda",
+                    title: "Análise de Segurança Humana",
                     description: "Composto por ingredientes alimentícios, o EcoFire é 100% atóxico e seguro, não irritando pele, olhos ou vias nasais. O CO2 apresenta risco de asfixia em locais fechados, e o Pó Químico (PQS) é irritante e poluente, podendo dificultar a evacuação.",
                     data: [10, 4, 6, 9, 7],
                     backgroundColor: ['#15803d', '#ef4444', '#64748b', '#3b82f6', '#f97316'],
@@ -533,7 +679,7 @@
                         data: data.data,
                         backgroundColor: data.backgroundColor,
                         borderColor: data.backgroundColor.map(color => color.replace('0.2', '1')),
-                        borderWidth: 1
+                        borderWidth: 1, // Set border width to 1
                     }]
                 },
                 options: {
@@ -621,21 +767,23 @@
         });
 
         // Global chart instances for infographics
-        let globalFiresChart = null;
-        let brazilBiomesChart = null;
-        let fireCausesChart = null;
+        var globalFiresChart = null;
+        var brazilBiomesChart = null;
+        var fireCausesChart = null;
 
         // Initialize theme on load
         const savedTheme = localStorage.getItem('theme') || 'light';
+        // Call setTheme initially to set colors and create charts
         setTheme(savedTheme);
 
 
         window.onload = () => {
             updateChartAndText('residues');
-            initializeInfographicCharts(); // Initialize new charts on load
+            // initializeInfographicCharts() is now implicitly called by setTheme during initial load
+            // showCarousel(); // Removed carousel from this section
         };
 
-        // Markdown to HTML converter
+        // Markdown to HTML converter (simplified for pre-written text)
         function convertMarkdownToHtml(markdownText) {
             let htmlText = markdownText;
 
@@ -643,14 +791,11 @@
             htmlText = htmlText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
             // Convert italic (*text*)
             htmlText = htmlText.replace(/\*(.*?)\*/g, '<em>$1</em>');
-
             // Convert newlines to paragraphs
-            // Split by double newlines to get paragraphs
             const paragraphs = htmlText.split(/\n\s*\n/);
             htmlText = paragraphs.map(p => {
-                // Trim each paragraph and replace single newlines with <br>
                 let trimmedP = p.trim();
-                if (trimmedP === '') return ''; // Skip empty paragraphs
+                if (trimmedP === '') return '';
                 trimmedP = trimmedP.replace(/\n/g, '<br>');
                 return `<p>${trimmedP}</p>`;
             }).join('');
@@ -658,108 +803,258 @@
             return htmlText;
         }
 
-
-        // Gemini API Integration for Scenario Simulator
-        const simulateBtn = document.getElementById('simulateBtn');
-        const scenarioInput = document.getElementById('scenarioInput');
-        const simulationResult = document.getElementById('simulationResult');
-        const resultText = document.getElementById('resultText');
-        const loadingSpinner = document.getElementById('loadingSpinner');
-        const buttonText = document.getElementById('buttonText');
-        const errorMessage = document.getElementById('errorMessage');
-        const clearScenarioBtn = document.getElementById('clearScenarioBtn');
-        const shareScenarioBtn = document.getElementById('shareScenarioBtn');
-
-
-        simulateBtn.addEventListener('click', async () => {
-            const userScenario = scenarioInput.value.trim();
-            if (!userScenario) {
-                resultText.innerHTML = "Por favor, descreva um cenário de incêndio para simular.";
-                simulationResult.classList.remove('hidden');
-                errorMessage.classList.add('hidden');
-                return;
+        // Consolidated Scenarios & Industry Applications Data
+        const allScenariosAndApplicationsData = {
+            // Scenarios
+            cozinha: {
+                title: "Incêndio em Cozinha Industrial (Óleo Fervente - Classe K)",
+                description: "Em incêndios de Classe K, como óleo fervente em cozinhas industriais, o EcoFire atua de forma superior. Sua fórmula encapsula o material combustível, resfria rapidamente e impede a reignição, ao contrário da água que espalharia o fogo ou do pó químico que deixaria resíduos difíceis de limpar e não resfriaria. É seguro para alimentos e não tóxico.",
+                imageUrl: "https://th.bing.com/th/id/R.42797b91fec57db785c3a595c9e08a2f?rik=kg000ZfCFxoXKw&riu=http%3a%2f%2f2.bp.blogspot.com%2f-h4qw8MNXv60%2fVM7ck9-TCYI%2fAAAAAAAAYMI%2fqtdTIVac8jY%2fs1600%2f34.bmp&ehk=lQJQ8B%2b0MWPeM8ktO6Pys0O62MjIgB2NRWl5E5VQxDg%3d&risl=&pid=ImgRaw&r=0" 
+            },
+            datacenter: {
+                title: "Incêndio em Data Center (Curto-circuito - Classe C)",
+                description: "Para incêndios em data centers causados por curto-circuito (Classe C), o EcoFire é ideal. Sendo dielétrico (25.000 V), não conduz eletricidade, protegendo equipamentos eletrónicos sensíveis de danos secundários. Não deixa resíduos corrosivos, ao contrário do pó químico, e não causa danos por água, garantindo a rápida retomada das operações.",
+                imageUrl: "https://i.ytimg.com/vi/q6WlzHLxNKI/hqdefault.jpg" 
+            },
+            bateria: {
+                title: "Incêndio em Bateria de Lítio (Veículo Elétrico - Classe B/C especial)",
+                description: "Incêndios em baterias de lítio, como em veículos elétricos, são extremamente desafiadores. O EcoFire é o único agente comprovadamente eficaz para extinguir e arrefecer esses incêndios, prevenindo a fuga térmica e a propagação. Sua ação rápida e capacidade de resfriamento são cruciais para controlar este tipo de fogo complexo e emergente.",
+                imageUrl: "https://th.bing.com/th/id/OIP.xgalLRd2GA_JPEWRiJUefQHaEK?w=265&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" 
+            },
+            escritorio: {
+                title: "Incêndio em Escritório (Papel/Móveis - Classe A)",
+                description: "Em incêndios de Classe A, como papel ou móveis em escritórios, o EcoFire age de 6 a 10 vezes mais rápido que a água e é 30-40 vezes mais eficaz. Ele extingue o fogo completamente, resfria a área e impede a reignição. Não deixa resíduos, o que minimiza a limpeza e os danos ao ambiente e documentos.",
+                imageUrl: "https://img.freepik.com/fotos-premium/um-escritorio-cheio-de-mesas-e-um-incendio-ao-fundo_662214-434345.jpg" 
+            },
+            floresta: {
+                title: "Incêndio em Floresta/Vegetação",
+                description: "Em incêndios florestais, a ação rápida e a capacidade de resfriamento do EcoFire são essenciais para conter a propagação. Por ser ecológico e biodegradável, minimiza o impacto ambiental em ecossistemas sensíveis, ao contrário de agentes químicos que poderiam contaminar o solo e a água.",
+                imageUrl: "https://www.yucatanencorto.com/noticias/wp-content/uploads/2021/02/estiaje-2.jpg"
+            },
+            armazemGrao: {
+                title: "Incêndio em Armazém de Grãos",
+                description: "Incêndios em armazéns de grãos (Classe A/B, risco de explosão de poeira) exigem um agente que atue rapidamente e sem causar danos adicionais. O EcoFire, ao encapsular o material e não deixar resíduos, é ideal para proteger grandes volumes de produtos agrícolas e evitar a reignição, que é um risco comum em materiais orgânicos secos.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/armazem-graos-ecofire.jpg"
+            },
+            painelEletrico: {
+                title: "Incêndio em Painel Elétrico Industrial",
+                description: "Em painéis elétricos industriais (Classe C), a propriedade dielétrica do EcoFire (25.000 V) é crucial. Ele extingue o fogo sem risco de choque elétrico e, por não deixar resíduos, permite a rápida inspeção e reparo do equipamento, minimizando o tempo de inatividade da produção.",
+                imageUrl: "https://img.freepik.com/premium-photo/fire-accident-electrical-panel-with-electrical-grid-control-system-ai-generated_1031849-8661.jpg?w=2000" 
+            },
+            veiculo: {
+                title: "Incêndio em Veículo (Combustível/Elétrico)",
+                description: "Incêndios em veículos, sejam eles a combustão ou elétricos, são perigosos devido aos líquidos inflamáveis e baterias. O EcoFire é eficaz em ambas as situações, agindo rapidamente para controlar o fogo, resfriar componentes e evitar a reignição, protegendo a vida dos ocupantes e minimizando danos ao veículo.",
+                imageUrl: "https://s2.glbimg.com/mOWwX5LbN4MK7bN3odlJLA7xIhE=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/3/O/Gpec6YQ9uuJ8H51b6dYw/whatsapp-image-2023-01-25-at-00.54.37.jpeg" 
+            },
+            laboratorio: {
+                title: "Incêndio em Laboratório (Químicos/Equipamentos)",
+                description: "Laboratórios lidam com diversos riscos, incluindo químicos inflamáveis (Classe B) e equipamentos elétricos (Classe C). O EcoFire, por ser não tóxico, não corrosivo e dielétrico, é a solução segura para proteger o pessoal, os equipamentos de pesquisa e evitar a contaminação cruzada, sem deixar resíduos que comprometam o ambiente estéril.",
+                imageUrl: "https://www.materialparalaboratorio.com.br/imagens/equipamento-para-laboratorio-de-microbiologia.jpg" 
+            },
+            hospital: {
+                title: "Incêndio em Hospital (Equipamentos/Materiais)",
+                description: "Em hospitais, a segurança de pacientes e equipamentos médicos é crítica. O EcoFire, por ser atóxico, não irritante e não deixar resíduos, é ideal para conter incêndios em ambientes sensíveis, protegendo a saúde dos pacientes e a funcionalidade de equipamentos vitais sem causar danos secundários ou exigir evacuações complexas devido a resíduos.",
+                imageUrl: "https://media.licdn.com/dms/image/v2/D4D12AQGhyIyaJY3CCQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1726754994204?e=2147483647&v=beta&t=YY4xnhfpyQvHqLIa7XKa1DegPUC4_VrbJZbs9__KYV0" 
+            },
+            // Industry Applications
+            agro: {
+                title: "Setor Agropecuário",
+                description: "No agronegócio, o EcoFire protege máquinas pesadas, armazéns de colheitas e áreas de vegetação. Sua natureza ecológica é ideal para ambientes agrícolas, evitando a contaminação do solo e da água, e sua eficácia em Classes A, B e C cobre a maioria dos riscos.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/agro-ecofire.jpg"
+            },
+            papeleira: {
+                title: "Indústria Papeleira",
+                description: "Em indústrias papeleiras, onde há grande volume de materiais Classe A (papel, celulose) e máquinas elétricas, o EcoFire oferece extinção rápida sem resíduos corrosivos, protegendo equipamentos caros e minimizando perdas de produção.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/papelaria.jpg"
+            },
+            siderurgica: {
+                title: "Indústria Siderúrgica",
+                description: "Ambientes siderúrgicos apresentam riscos de altas temperaturas e equipamentos elétricos. O EcoFire é eficaz em diversas classes de fogo e sua capacidade de resfriamento rápido é vital para controlar incidentes e proteger a infraestrutura.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/siderurgica-ecofire.jpg"
+            },
+            metalurgica: {
+                title: "Indústria Metalúrgica",
+                description: "Na metalurgia, com máquinas, óleos e riscos elétricos, o EcoFire se destaca por não ser corrosivo e dielétrico, protegendo equipamentos sensíveis e garantindo a segurança dos operadores sem deixar resíduos que exijam limpeza complexa.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/metalurgicca.jpg"
+            },
+            mineracao: {
+                title: "Setor de Mineração",
+                description: "Em mineração, equipamentos pesados, combustíveis e poeira são riscos constantes. O EcoFire, com sua versatilidade e ação rápida, é ideal para proteger veículos, máquinas e instalações, minimizando o tempo de inatividade e os danos.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/mineracao.jpg"
+            },
+            fertilizantes: {
+                title: "Indústria de Fertilizantes",
+                description: "A indústria de fertilizantes lida com produtos químicos e armazenamento em larga escala. O EcoFire, por ser não tóxico e não deixar resíduos, é a escolha segura para conter incêndios sem riscos de contaminação ou danos adicionais aos produtos e ao meio ambiente.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/fertilizantes-eco.jpg"
+            },
+            usinasAlcool: {
+                title: "Usinas de Álcool",
+                description: "Usinas de álcool apresentam alto risco de incêndios de líquidos inflamáveis (Classe B). O EcoFire atua encapsulando o combustível e impedindo a reignição, sendo crucial para a segurança em ambientes com grandes volumes de materiais combustíveis.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/usinas-alcool-ecofire.jpg"
+            },
+            combustiveis: {
+                title: "Armazenamento e Distribuição de Combustíveis",
+                description: "Para postos de gasolina, depósitos e áreas de distribuição de combustíveis, o EcoFire é essencial. Sua eficácia em incêndios de Classe B e sua capacidade de impedir a reignição garantindo a máxima segurança em situações de alto risco.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/combustieis-ecofire.jpg"
+            },
+            petroquimico: {
+                title: "Indústria Petroquímica",
+                description: "A indústria petroquímica, com seus produtos químicos, gases e líquidos inflamáveis, exige a mais alta segurança. O EcoFire, com sua versatilidade e capacidade de extinção rápida e limpa, é ideal para proteger instalações complexas e minimizar danos e tempo de inatividade.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/petroquimico-eco.jpg"
+            },
+            textil: {
+                title: "Indústria Têxtil",
+                description: "Fibras altamente inflamáveis e máquinas elétricas são comuns na indústria têxtil. O EcoFire extingue incêndios rapidamente sem deixar resíduos que danifiquem tecidos ou equipamentos, garantindo a continuidade da produção e a segurança do ambiente de trabalho.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/textil-eco.jpg"
+            },
+            florestais: {
+                title: "Setor Florestal e Preservação",
+                description: "Para incêndios florestais e em áreas de preservação, o EcoFire é a solução sustentável. Sendo biodegradável e não tóxico, combate o fogo sem agredir o ecossistema, protegendo a flora e a fauna e minimizando o impacto ambiental.",
+                imageUrl: "https://wwfbrnew.awsassets.panda.org/img/jac_4135_1_132167.webp" 
+            },
+            algodao: {
+                title: "Armazenamento de Algodão",
+                description: "O algodão é altamente inflamável e pode causar incêndios de difícil controle. O EcoFire, ao resfriar e encapsular as fibras, é eficaz em conter o fogo e evitar a reignição, protegendo grandes volumes de material e minimizando perdas.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/algodao-ecofire.jpg" 
+            },
+            armazemGrao: { 
+                title: "Armazéns de Grãos e Silos",
+                description: "Em armazéns de grãos e silos, o risco de incêndios e explosões de poeira é significativo. O EcoFire, por sua ação rápida e por não deixar resíduos, é ideal para proteger o estoque, evitar a contaminação e permitir uma recuperação eficiente após um incidente.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/armazem-graos-ecofire.jpg"
             }
+        };
 
-            buttonText.classList.add('hidden');
-            loadingSpinner.classList.remove('hidden');
-            simulateBtn.disabled = true;
-            simulationResult.classList.add('hidden');
-            errorMessage.classList.add('hidden');
+        // Product Details for the new "Nossos Produtos" section
+        const productDetails = [
+            {
+                title: "EcoFire Extintor 2L",
+                description: "Ideal para uso doméstico e veículos pequenos. Compacto, eficaz e seguro para a família.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/extintor-2L-300x300-1.jpg",
+                productUrl: "https://ecofire.hotworkbrasil.com.br/produtos/"
+            },
+            {
+                title: "EcoFire Extintor 6L",
+                description: "Versátil para escritórios, pequenas empresas e áreas comerciais. Alta capacidade de extinção.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/EXTINTOR-6L-ETIQUETA-300x300-1.jpg",
+                productUrl: "https://ecofire.hotworkbrasil.com.br/produtos/"
+            },
+            {
+                title: "EcoFire Extintor 5L (Fly)",
+                description: "Leve e portátil, perfeito para uso em aeronaves leves, barcos e veículos de recreio. Eficácia comprovada.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/04/ECOFIREFL5L-300x300_FLY1.png",
+                productUrl: "https://ecofire.hotworkbrasil.com.br/produtos/"
+            },
+            {
+                title: "EcoFire Extintor Industrial 1L (Portátil)",
+                description: "Solução compacta para riscos industriais específicos ou como complemento em áreas de difícil acesso.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/04/ecofire-industry-1l-1.png",
+                productUrl: "https://ecofire.hotworkbrasil.com.br/produtos/"
+            },
+            {
+                title: "EcoFire Extintor Industrial 1000L (FLT)",
+                description: "Para grandes áreas industriais e riscos de incêndio de alta complexidade. Proteção massiva e eficiente.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/04/ecofire-industry-1000l-FLT.png",
+                productUrl: "https://ecofire.hotworkbrasil.com.br/produtos/"
+            },
+            {
+                title: "EcoFire Extintor para Baterias de Lítio",
+                description: "Especialmente formulado para combater incêndios em baterias de lítio, prevenindo a fuga térmica e a reignição. Essencial para veículos elétricos e sistemas de armazenamento de energia.",
+                imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/04/83caf93b-b24b-4685-a4b9-472e9170365a-768x768.jpg",
+                productUrl: "https://ecofire.hotworkbrasil.com.br/produtos/"
+            }
+        ];
 
-            const prompt = `Você é um especialista em segurança contra incêndios e extintores. O usuário descreverá um cenário de incêndio. Sua tarefa é explicar como o extintor EcoFire seria a melhor solução para esse cenário, destacando suas vantagens em comparação com os métodos convencionais (água, pó químico, CO2, espuma) para *esse cenário específico*. Seja conciso, claro e foque nos benefícios do EcoFire para o cenário dado. O cenário é: ${userScenario}`;
+        // Product Carousel (removed from this section, but keeping variables for clarity if needed elsewhere)
+        let currentImageIndex = 0;
+        let carouselInterval;
 
-            let chatHistory = [];
-            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-            const payload = { contents: chatHistory };
-            const apiKey = "";
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+        const carouselContainer = document.getElementById('carouselContainer'); // This element is now unused in HTML
+        const carouselImage = document.getElementById('carouselImage'); // This element is now unused in HTML
+        const carouselTextLink = document.getElementById('carouselTextLink'); // This element is now unused in HTML
+        const selectedContent = document.getElementById('selectedContent');
+        const placeholderContent = document.getElementById('placeholderContent');
 
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const result = await response.json();
 
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    const text = result.candidates[0].content.parts[0].text;
-                    resultText.innerHTML = convertMarkdownToHtml(text); // Use the Markdown converter
-                    simulationResult.classList.remove('hidden');
-                } else {
-                    errorMessage.classList.remove('hidden');
-                    resultText.innerHTML = '';
+        function showSelectedContent() {
+            placeholderContent.classList.add('hidden');
+            selectedContent.classList.remove('hidden');
+        }
+
+        function showPlaceholderContent() {
+            selectedContent.classList.add('hidden');
+            placeholderContent.classList.remove('hidden');
+        }
+
+
+        const scenarioApplicationButtons = document.querySelectorAll('.scenario-list-item'); 
+        const scenarioApplicationTitleDisplay = document.getElementById('scenarioApplicationTitle');
+        const scenarioApplicationDescriptionDisplay = document.getElementById('scenarioApplicationDescription');
+        const scenarioApplicationImageDisplay = document.getElementById('scenarioApplicationImage');
+        const scenarioApplicationResultArea = document.getElementById('scenarioApplicationResult');
+        const clearScenarioApplicationBtn = document.getElementById('clearScenarioApplicationBtn');
+        const shareScenarioApplicationBtn = document.getElementById('shareScenarioApplicationBtn');
+
+        scenarioApplicationButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                scenarioApplicationButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to the clicked button
+                button.classList.add('active');
+
+                showSelectedContent(); // Show selected content, hide placeholder
+
+                const key = button.dataset.key;
+                const data = allScenariosAndApplicationsData[key];
+
+                if (data) {
+                    scenarioApplicationTitleDisplay.innerText = data.title;
+                    scenarioApplicationDescriptionDisplay.innerHTML = convertMarkdownToHtml(data.description);
+                    
+                    if (data.imageUrl) {
+                        scenarioApplicationImageDisplay.src = data.imageUrl;
+                        scenarioApplicationImageDisplay.classList.remove('hidden');
+                    } else {
+                        scenarioApplicationImageDisplay.classList.add('hidden');
+                        scenarioApplicationImageDisplay.src = ''; // Clear src if no image
+                    }
                 }
-            } catch (error) {
-                console.error("Erro ao chamar a API Gemini:", error);
-                errorMessage.classList.remove('hidden');
-                resultText.innerHTML = '';
-            } finally {
-                buttonText.classList.remove('hidden');
-                loadingSpinner.classList.add('hidden');
-                simulateBtn.disabled = false;
-            }
+            });
         });
 
-        // Clear Scenario Button Logic
-        clearScenarioBtn.addEventListener('click', () => {
-            scenarioInput.value = '';
-            resultText.innerHTML = '';
-            simulationResult.classList.add('hidden');
-            errorMessage.classList.add('hidden');
-            simulateBtn.disabled = false; // Re-enable simulate button
-            buttonText.classList.remove('hidden'); // Ensure button text is visible
-            loadingSpinner.classList.add('hidden'); // Ensure spinner is hidden
+        clearScenarioApplicationBtn.addEventListener('click', () => {
+            scenarioApplicationTitleDisplay.innerText = '';
+            scenarioApplicationDescriptionDisplay.innerHTML = '';
+            scenarioApplicationImageDisplay.src = '';
+            scenarioApplicationImageDisplay.classList.add('hidden');
+            scenarioApplicationButtons.forEach(btn => btn.classList.remove('active')); // Remove active class
+            showPlaceholderContent(); // Show placeholder when selection is cleared
         });
 
-        // Share Scenario Button Logic
-        shareScenarioBtn.addEventListener('click', () => {
-            const scenario = scenarioInput.value.trim();
-            const analysis = resultText.innerText.trim(); // Get plain text for sharing
-            const shareText = `Cenário de Incêndio:\n"${scenario}"\n\nAnálise EcoFire:\n${analysis}\n\nSaiba mais sobre EcoFire: ${window.location.href}`;
+        shareScenarioApplicationBtn.addEventListener('click', () => {
+            const title = scenarioApplicationTitleDisplay.innerText.trim();
+            const description = scenarioApplicationDescriptionDisplay.innerText.trim();
+            const shareText = `Cenário/Aplicação: "${title}"\n\nDetalhes EcoFire:\n${description}\n\nSaiba mais sobre EcoFire: ${window.location.href}`;
 
-            // Use document.execCommand('copy') for better compatibility in iframes
             const textarea = document.createElement('textarea');
             textarea.value = shareText;
             document.body.appendChild(textarea);
             textarea.select();
             try {
                 document.execCommand('copy');
-                shareScenarioBtn.innerText = 'Copiado!';
+                shareScenarioApplicationBtn.innerText = 'Copiado!';
                 setTimeout(() => {
-                    shareScenarioBtn.innerText = 'Compartilhar Cenário';
+                    shareScenarioApplicationBtn.innerText = 'Copiar para Compartilhar';
                 }, 2000);
             } catch (err) {
                 console.error('Falha ao copiar texto: ', err);
-                shareScenarioBtn.innerText = 'Erro ao Copiar';
+                shareScenarioApplicationBtn.innerText = 'Erro ao Copiar';
                 setTimeout(() => {
-                    shareScenarioBtn.innerText = 'Compartilhar Cenário';
+                    shareScenarioApplicationBtn.innerText = 'Copiar para Compartilhar';
                 }, 2000);
             }
             document.body.removeChild(textarea);
         });
+
 
         // Contact Modal Logic
         const openContactModalBtn = document.getElementById('openContactModalBtn');
@@ -791,6 +1086,10 @@
         });
 
         // Infographic Charts Data and Initialization
+        var globalFiresChart = null; 
+        var brazilBiomesChart = null; 
+        var fireCausesChart = null; 
+
         function initializeInfographicCharts() {
             const rootStyles = getComputedStyle(document.body); // Get styles from body
             const chartTextColor = rootStyles.getPropertyValue('--chart-text-color-y');
@@ -893,7 +1192,7 @@
                             '#15803d',
                             '#475569'
                         ],
-                        borderWidth: 1
+                        borderWidth: 1 //Border width for bars
                     }]
                 },
                 options: {
@@ -907,16 +1206,26 @@
                         y: {
                             beginAtZero: true,
                             max: 100,
-                            ticks: { color: chartTextColor },
+                            ticks: { display: false }, // Removed Y-axis labels
                             grid: { color: chartGridColor }
                         }
                     },
                     plugins: {
                         legend: {
                             display: false // Hide legend for single dataset bar chart
+                        },
+                        datalabels: { // Datalabels plugin configuration
+                            color: chartTextColor, // Text color for labels
+                            anchor: 'end',
+                            align: 'top',
+                            formatter: (value) => value + '%', // Add '%' to values
+                            font: {
+                                weight: 'bold'
+                            }
                         }
                     }
-                }
+                },
+                plugins: [ChartDataLabels] // Register the plugin
             });
         }
 
@@ -927,6 +1236,76 @@
             if (fireCausesChart) fireCausesChart.destroy();
             initializeInfographicCharts();
         }
+
+        // Navigation for "Onde Usar" dropdown
+        const ondeUsarSelect = document.getElementById('ondeUsarSelect');
+        ondeUsarSelect.addEventListener('change', (event) => {
+            const selectedSectionId = event.target.value;
+            if (selectedSectionId) {
+                const section = document.getElementById(selectedSectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            // Reset the dropdown to its default "Onde Usar" after selection
+            event.target.value = ""; 
+        });
+
+        // Initialize product gallery
+        const productGalleryContainer = document.querySelector('#nossos-produtos .flex.flex-wrap');
+        const selectedProductDetailsDiv = document.getElementById('selectedProductDetails');
+        const selectedProductTitle = document.getElementById('selectedProductTitle');
+        const selectedProductImage = document.getElementById('selectedProductImage');
+        const selectedProductDescription = document.getElementById('selectedProductDescription');
+        const clearProductSelectionBtn = document.getElementById('clearProductSelectionBtn');
+
+        function initializeProductGallery() {
+            productDetails.forEach((product, index) => {
+                const productItem = document.createElement('a'); // Changed to <a> tag
+                productItem.href = product.productUrl; // Set href
+                productItem.target = "_blank"; // Open in new tab
+                productItem.classList.add('product-item', 'p-4', 'rounded-lg', 'shadow-md', 'cursor-pointer', 'hover:shadow-lg', 'transition-shadow', 'duration-300', 'bg-white');
+                productItem.dataset.index = index;
+
+                const img = document.createElement('img');
+                img.src = product.imageUrl;
+                img.alt = product.title;
+                img.classList.add('w-32', 'h-32', 'object-contain', 'mx-auto', 'mb-2');
+
+                const title = document.createElement('p');
+                title.classList.add('text-sm', 'font-semibold');
+                title.innerText = product.title;
+
+                productItem.appendChild(img);
+                productItem.appendChild(title);
+                productGalleryContainer.appendChild(productItem);
+
+                // Add click listener for showing details (optional, as the whole item is now a link)
+                productItem.addEventListener('click', (e) => {
+                    // Prevent default link behavior if you want to show details first
+                    // e.preventDefault(); 
+
+                    // Remove active class from all product items
+                    document.querySelectorAll('.product-item').forEach(item => item.classList.remove('active'));
+                    // Add active class to the clicked item
+                    productItem.classList.add('active');
+
+                    selectedProductTitle.innerText = product.title;
+                    selectedProductImage.src = product.imageUrl;
+                    selectedProductImage.classList.remove('hidden');
+                    selectedProductDescription.innerHTML = convertMarkdownToHtml(product.description);
+                    selectedProductDetailsDiv.classList.remove('hidden');
+                });
+            });
+        }
+
+        clearProductSelectionBtn.addEventListener('click', () => {
+            selectedProductDetailsDiv.classList.add('hidden');
+            document.querySelectorAll('.product-item').forEach(item => item.classList.remove('active'));
+        });
+
+        // Call initializeProductGallery on page load
+        window.addEventListener('load', initializeProductGallery);
 
     </script>
 </body>
