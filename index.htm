@@ -362,7 +362,7 @@
                         <p class="text-stone-600">Composto por ingredientes naturais, é atóxico, biodegradável e inofensivo para pessoas, animais e plantas. Segurança total para todos.</p>
                     </div>
                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <div class="text-green-700 mb-4">
+                         <div class="text-green-700 mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                         </div>
                         <h4 class="text-xl font-bold mb-2">Eficácia e Velocidade</h4>
@@ -375,9 +375,9 @@
                         <h4 class="text-xl font-bold mb-2">Zero Resíduos e Danos</h4>
                         <p class="text-stone-600">Não deixa resíduos, não é corrosivo e é dielétrico. Protege equipamentos eletrónicos e sensíveis, eliminando custos de limpeza e reparação.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
                         <div class="text-green-700 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                         </div>
                         <h4 class="text-xl font-bold mb-2">Versatilidade Total</h4>
                         <p class="text-stone-600">Eficaz em todas as classes comuns de incêndio (A, B, C, K) e, crucialmente, o único que controla incêndios em baterias de lítio.</p>
@@ -392,7 +392,7 @@
                 <p class="text-lg text-stone-600 max-w-3xl mx-auto mb-8">
                     Explore a nossa linha completa de extintores EcoFire, projetados para cada necessidade. Clique para ver em detalhe.
                 </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center">
+                <div id="productGalleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center">
                     <!-- Product items will be dynamically generated here -->
                 </div>
                 <div id="selectedProductDetails" class="mt-8 p-6 bg-white rounded-lg border border-stone-200 hidden">
@@ -679,7 +679,7 @@
                         data: data.data,
                         backgroundColor: data.backgroundColor,
                         borderColor: data.backgroundColor.map(color => color.replace('0.2', '1')),
-                        borderWidth: 1, // Set border width to 1
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -693,18 +693,18 @@
                             ticks: {
                                 color: xTickColor // Use dynamically retrieved color
                             },
-                            grid: {
+                             grid: {
                                 color: gridColor // Use dynamically retrieved color
                             }
                         },
                         y: {
-                            ticks: {
+                             ticks: {
                                 color: yTickColor, // Use dynamically retrieved color
                                 font: {
                                     weight: 'bold'
                                 }
                             },
-                            grid: {
+                             grid: {
                                 display: false
                             }
                         }
@@ -767,9 +767,9 @@
         });
 
         // Global chart instances for infographics
-        var globalFiresChart = null;
-        var brazilBiomesChart = null;
-        var fireCausesChart = null;
+        var globalFiresChart = null; 
+        var brazilBiomesChart = null; 
+        var fireCausesChart = null; 
 
         // Initialize theme on load
         const savedTheme = localStorage.getItem('theme') || 'light';
@@ -907,10 +907,10 @@
                 description: "Fibras altamente inflamáveis e máquinas elétricas são comuns na indústria têxtil. O EcoFire extingue incêndios rapidamente sem deixar resíduos que danifiquem tecidos ou equipamentos, garantindo a continuidade da produção e a segurança do ambiente de trabalho.",
                 imageUrl: "https://ecofire.hotworkbrasil.com.br/wp-content/uploads/2025/03/textil-eco.jpg"
             },
-            florestais: {
+            florestais: { 
                 title: "Setor Florestal e Preservação",
                 description: "Para incêndios florestais e em áreas de preservação, o EcoFire é a solução sustentável. Sendo biodegradável e não tóxico, combate o fogo sem agredir o ecossistema, protegendo a flora e a fauna e minimizando o impacto ambiental.",
-                imageUrl: "https://wwfbrnew.awsassets.panda.org/img/jac_4135_1_132167.webp" 
+                imageUrl: "https://cdn.juinanews.com.br/storage/webdisco/2024/09/02/1200x900/5623626968f004d7af6c60ae7c8ff6c4.jpg" 
             },
             algodao: {
                 title: "Armazenamento de Algodão",
@@ -968,9 +968,11 @@
         let currentImageIndex = 0;
         let carouselInterval;
 
-        const carouselContainer = document.getElementById('carouselContainer'); // This element is now unused in HTML
-        const carouselImage = document.getElementById('carouselImage'); // This element is now unused in HTML
-        const carouselTextLink = document.getElementById('carouselTextLink'); // This element is now unused in HTML
+        // These elements are no longer in the HTML for scenarioApplicationResult
+        // const carouselContainer = document.getElementById('carouselContainer'); 
+        // const carouselImage = document.getElementById('carouselImage'); 
+        // const carouselTextLink = document.getElementById('carouselTextLink'); 
+
         const selectedContent = document.getElementById('selectedContent');
         const placeholderContent = document.getElementById('placeholderContent');
 
@@ -1192,7 +1194,7 @@
                             '#15803d',
                             '#475569'
                         ],
-                        borderWidth: 1 //Border width for bars
+                        borderWidth: 1 //  Border width for bars
                     }]
                 },
                 options: {
@@ -1252,7 +1254,7 @@
         });
 
         // Initialize product gallery
-        const productGalleryContainer = document.querySelector('#nossos-produtos .flex.flex-wrap');
+        const productGalleryContainer = document.getElementById('productGalleryGrid'); // Corrected selector
         const selectedProductDetailsDiv = document.getElementById('selectedProductDetails');
         const selectedProductTitle = document.getElementById('selectedProductTitle');
         const selectedProductImage = document.getElementById('selectedProductImage');
